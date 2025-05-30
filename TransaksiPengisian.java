@@ -1,10 +1,10 @@
 public class TransaksiPengisian {
-    kendaraan dataAntrian;
+    kendaraan kendaraan;
     BBM bbm;
     double liter;
     double totalBayar;
     public TransaksiPengisian(kendaraan dt, BBM bbm, double ltr){
-        dataAntrian = dt;
+        kendaraan = dt;
         this.bbm = bbm;
         liter = ltr;
         totalBayar = ltr * this.bbm.hargaPerLiter;

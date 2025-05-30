@@ -32,8 +32,11 @@ public class methodSPBU {
         sizeAntrian ++;
         System.out.println(input.platNomor + " berhasil masuk ke antrian.");
     }
-    public void insertAt(TransaksiPengisian input){
-        nodeBBM ndInput = new nodeBBM(input);
+    public void melayani(BBM bbm, double liter){
+        TransaksiPengisian dtInput = new TransaksiPengisian(dataAntrian[frontAntrian], bbm, liter);
+        frontAntrian = (frontAntrian + 1) % max;
+        sizeAntrian --;
+        nodeBBM ndInput = new nodeBBM(dtInput);
         if (sizeAntrian == 0) {
             head = ndInput;
             tail = ndInput;
@@ -48,10 +51,16 @@ public class methodSPBU {
     public int getJumlahAntrian(){
         return sizeAntrian;
     }
-    public void tampilkanKendaraan(){
+    public void tampilkanAntrian(){
         System.out.println("Antrian kendaraan :");
         for(int i = 0; i < sizeAntrian; i++){
             dataAntrian[i].tampilkanInformasi();
         }
-    }    
+    }
+    public void riwayatTransaksi(){
+        nodeBBM temp = head;
+        while (temp != null) {
+            System.out.println(temp.data.kendaraan.platNomor + " : Rp." + temp.data.totalBayar);
+        }
+    }
 }
