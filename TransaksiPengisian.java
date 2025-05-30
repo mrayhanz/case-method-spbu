@@ -1,16 +1,13 @@
 public class TransaksiPengisian {
-    kendaraan dataAntrian[];
-    int front, rear, size, max;
-    nodeBBM head, tail;
-    
+    kendaraan dataAntrian;
+    BBM bbm;
+    double liter;
+    double totalBayar;
+    public TransaksiPengisian(kendaraan dt, BBM bbm, double ltr){
+        dataAntrian = dt;
+        this.bbm = bbm;
+        liter = ltr;
+        totalBayar = ltr * this.bbm.hargaPerLiter;
+    }
 
-    public TransaksiPengisian(int n){
-        max = n;
-        size = 0;
-        front = rear = -1;
-    }
-    public TransaksiPengisian(){
-        head = tail = null;
-    }
-    
 }

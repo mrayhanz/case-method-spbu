@@ -1,10 +1,8 @@
 public class nodeBBM {
-    BBM data;
+    TransaksiPengisian data;
     nodeBBM next;
-    nodeBBM prev;
-    public nodeBBM(BBM dt){
+    public nodeBBM(TransaksiPengisian dt){
         data = dt;
         next = null;
-        prev = null;
     }
 }
