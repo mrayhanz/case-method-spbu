@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class SPBUMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        methodSPBU spbu = new methodSPBU(5);
+        MethodSPBU spbu = new MethodSPBU(5);
         int pilihan;
 
         do {
@@ -26,7 +26,7 @@ public class SPBUMain {
                     String tipe = sc.nextLine();
                     System.out.print("Masukkan Merk Kendaraan: ");
                     String merk = sc.nextLine();
-                    kendaraan kendaraanInput = new kendaraan(platNomor, tipe, merk);
+                    Kendaraan kendaraanInput = new Kendaraan(platNomor, tipe, merk);
                     spbu.tambahAntrian(kendaraanInput);
                     break;
             
