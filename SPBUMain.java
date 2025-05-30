@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class SPBUMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        methodSPBU spbu = new methodSPBU();
+        methodSPBU spbu = new methodSPBU(5);
         int pilihan;
 
         do {
@@ -37,7 +37,7 @@ public class SPBUMain {
                     System.out.println(">> Jumlah kendaraan dalam antrian: " + jumlahAntrian);
                     break;
                 case 4:
-                    methodSPBU dilayani = new methodSPBU();
+                    methodSPBU dilayani = spbu;
                     if (dilayani != null) {
                         System.out.println("Petugas Melayani " + dilayani.dataAntrian[dilayani.frontAntrian].platNomor);
                         System.out.print("Masukkan Jenis BBM: ");

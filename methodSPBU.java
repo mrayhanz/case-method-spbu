@@ -58,10 +58,4 @@ public class methodSPBU {
             System.out.println(temp.data.kendaraan.platNomor + " : Rp." + temp.data.totalBayar);
         }
     }
-
-    // public void input(){
-    //     System.out.print("Masukkan Plat Nomor : ");
-    //     System.out.print("Masukkan Jenis Kendaraan : ");
-    //     System.out.print("Masukkan Merk : ");
-    // }
 }
