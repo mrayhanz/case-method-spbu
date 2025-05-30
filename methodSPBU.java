@@ -45,7 +45,7 @@ public class methodSPBU {
             while (temp != null) {
                 temp = temp.next;
             }
-            temp.next = ndInput;
+            temp = ndInput;
         }
     }
     public int getJumlahAntrian(){
