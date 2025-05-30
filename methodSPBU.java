@@ -58,9 +58,13 @@ public class methodSPBU {
     }
     public void riwayatTransaksi(){
         nodeBBM temp = head;
-        while (temp != null) {
-            System.out.println(temp.data.kendaraan.platNomor + " : Rp." + temp.data.totalBayar);
-            temp = temp.next;
+        if (!isEmptyTransaksi()) {
+            while (temp != null) {
+                System.out.println(temp.data.kendaraan.platNomor + " : Rp." + temp.data.totalBayar);
+                temp = temp.next;
+            }
+        }else{
+            System.out.println("Transaksi masih kosong");
         }
     }
 }

@@ -5,7 +5,6 @@ public class SPBUMain {
         Scanner sc = new Scanner(System.in);
         methodSPBU spbu = new methodSPBU(5);
         int pilihan;
-        methodSPBU layananSPBU = new methodSPBU(10);
 
         do {
             System.out.println("\n--- Menu SPBU ---");
@@ -21,8 +20,6 @@ public class SPBUMain {
 
             switch (pilihan) {
                 case 1:
-                    layananSPBU.tambahAntrian(inputKendaraan(sc));
-                    System.out.println(">>> Kendaraan masuk kedalam antrian");
                     System.out.print("Masukkan Plat Nomor Kendaraan: ");
                     String platNomor = sc.nextLine();
                     System.out.print("Masukkan Tipe Kendaraan: ");
@@ -35,29 +32,14 @@ public class SPBUMain {
             
                 case 2:
                     System.out.println("--- Antrian kendaraan ---");
-                    layananSPBU.tampilkanAntrian();
                     spbu.tampilkanAntrian();
                     break;
                 case 3:
-                    System.out.println(">>> Jumlah kendaraan dalam antrian : " + layananSPBU.getJumlahAntrian());
                     int jumlahAntrian = spbu.getJumlahAntrian();
                     System.out.println(">> Jumlah kendaraan dalam antrian: " + jumlahAntrian);
                     break;
                 case 4:
-                    System.out.println("Petugas melayani " + layananSPBU.dataAntrian[layananSPBU.frontAntrian].platNomor);
-                    System.out.print("Masukkan jenis BBM : ");
-                    String jenis = sc.nextLine();
-                    System.out.print("Harga per liter : ");
-                    double harga = sc.nextDouble();
-                    BBM temp = new BBM(jenis, harga);
-                    System.out.print("Masukkan jumlah liter : ");
-                    double jumlah = sc.nextDouble();
-                    sc.nextLine();
-                    layananSPBU.melayani(temp, jumlah);
-                    System.out.println(">>> Transaksi berhasil dicatat");
-                    methodSPBU dilayani = spbu;
-                    if (dilayani != null) {
-                        System.out.println("Petugas Melayani " + dilayani.dataAntrian[dilayani.frontAntrian].platNomor);
+                        System.out.println("Petugas Melayani " + spbu.dataAntrian[spbu.frontAntrian].platNomor);
                         System.out.print("Masukkan Jenis BBM: ");
                         String jenisBBM = sc.nextLine();
                         System.out.println("Masukkan Harga per Liter: ");
@@ -65,13 +47,11 @@ public class SPBUMain {
                         System.out.print("Masukkan Jumlah Liter: ");
                         double liter = sc.nextDouble();
                         BBM bbm = new BBM(jenisBBM, hargaPerLiter);
-                        dilayani.melayani(bbm, liter);
+                        spbu.melayani(bbm, liter);
                         System.out.println(">> Transaksi Berhasil dicatat.");
-                    }
                     break;
                 case 5:
                     System.out.println("--- Riwayat transaksi ---");
-                    layananSPBU.riwayatTransaksi();
                     spbu.riwayatTransaksi();
                     break;
                 default:
@@ -79,5 +59,6 @@ public class SPBUMain {
                     break;
             }
         } while (pilihan != 0);
+        sc.close();
     }
 }
