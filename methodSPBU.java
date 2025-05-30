@@ -1,17 +1,12 @@
 public class methodSPBU {
     kendaraan dataAntrian[];
-    int frontAntrian, rearAntrian, sizeAntrian, max, sizeTransaksi;
+    int frontAntrian, rearAntrian, sizeAntrian, max;
     nodeBBM head, tail;
     
-
     public methodSPBU(int n){
         max = n;
         sizeAntrian = 0;
         frontAntrian = rearAntrian = -1;
-    }
-    public methodSPBU(){
-        head = tail = null;
-        sizeTransaksi = 0;
     }
     public boolean isEmptyTransaksi(){
         return head == null;
@@ -37,7 +32,7 @@ public class methodSPBU {
         frontAntrian = (frontAntrian + 1) % max;
         sizeAntrian --;
         nodeBBM ndInput = new nodeBBM(dtInput);
-        if (sizeAntrian == 0) {
+        if (!isEmptyTransaksi()) {
             head = ndInput;
             tail = ndInput;
         }else{
