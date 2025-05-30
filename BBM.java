@@ -12,8 +12,4 @@ public class BBM {
     public double getHargaPerLiter() {
         return hargaPerLiter;
     }
-    public void tampilkanInformasi() {
-        System.out.println("Masukkan Jenis BBM       : " + namaBBM);
-        System.out.println("Masukkan Harga per Liter : " + hargaPerLiter);
-    }
 }
