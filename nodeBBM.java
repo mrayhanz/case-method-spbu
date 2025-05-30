@@ -1,7 +1,7 @@
-public class nodeBBM {
+public class NodeBBM {
     TransaksiPengisian data;
-    nodeBBM next;
-    public nodeBBM(TransaksiPengisian dt){
+    NodeBBM next;
+    public NodeBBM(TransaksiPengisian dt){
         data = dt;
         next = null;
     }

@@ -1,9 +1,9 @@
-public class methodSPBU {
-    kendaraan dataAntrian[];
+public class MethodSPBU {
+    Kendaraan dataAntrian[];
     int frontAntrian, rearAntrian, sizeAntrian, max;
-    nodeBBM head, tail;
+    NodeBBM head, tail;
     
-    public methodSPBU(int n){
+    public MethodSPBU(int n){
         max = n;
         sizeAntrian = 0;
         frontAntrian = rearAntrian = -1;
@@ -17,7 +17,7 @@ public class methodSPBU {
     public boolean isFullAntrian(){
         return sizeAntrian == max;
     }
-    public void tambahAntrian(kendaraan input){
+    public void tambahAntrian(Kendaraan input){
         if (isFullAntrian()) {
             System.out.println("Antrian penuh, tidak dapat menambah kendaraan.");
             return;
@@ -31,12 +31,12 @@ public class methodSPBU {
         TransaksiPengisian dtInput = new TransaksiPengisian(dataAntrian[frontAntrian], bbm, liter);
         frontAntrian = (frontAntrian + 1) % max;
         sizeAntrian --;
-        nodeBBM ndInput = new nodeBBM(dtInput);
+        NodeBBM ndInput = new NodeBBM(dtInput);
         if (!isEmptyTransaksi()) {
             head = ndInput;
             tail = ndInput;
         }else{
-            nodeBBM temp = head;
+            NodeBBM temp = head;
             while (temp != null) {
                 temp = temp.next;
             }
@@ -53,7 +53,7 @@ public class methodSPBU {
         }
     }
     public void riwayatTransaksi(){
-        nodeBBM temp = head;
+        NodeBBM temp = head;
         while (temp != null) {
             System.out.println(temp.data.kendaraan.platNomor + " : Rp." + temp.data.totalBayar);
         }
