@@ -1,7 +1,7 @@
-public class Kendaraan {
+public class kendaraan {
     String platNomor, tipe, merk;
 
-    public Kendaraan(String platNomor, String tipe, String merk) {
+    public kendaraan(String platNomor, String tipe, String merk) {
         this.platNomor = platNomor;
         this.tipe = tipe;
         this.merk = merk;    
