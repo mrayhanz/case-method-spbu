@@ -20,11 +20,11 @@ public class SPBUMain {
             switch (pilihan) {
                 case 1:
                     System.out.print("Masukkan Plat Nomor Kendaraan: ");
-                    String platNomor = sc.next();
+                    String platNomor = sc.nextLine();
                     System.out.print("Masukkan Tipe Kendaraan: ");
-                    String tipe = sc.next();
+                    String tipe = sc.nextLine();
                     System.out.print("Masukkan Merk Kendaraan: ");
-                    String merk = sc.next();
+                    String merk = sc.nextLine();
                     kendaraan kendaraanInput = new kendaraan(platNomor, tipe, merk);
                     spbu.tambahAntrian(kendaraanInput);
                     break;
@@ -41,7 +41,7 @@ public class SPBUMain {
                     if (dilayani != null) {
                         System.out.println("Petugas Melayani " + dilayani.dataAntrian[dilayani.frontAntrian].platNomor);
                         System.out.print("Masukkan Jenis BBM: ");
-                        String jenisBBM = sc.next();
+                        String jenisBBM = sc.nextLine();
                         System.out.println("Masukkan Harga per Liter: ");
                         double hargaPerLiter = sc.nextDouble();
                         System.out.print("Masukkan Jumlah Liter: ");
