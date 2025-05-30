@@ -6,7 +6,7 @@ public class TransaksiPengisian {
     public TransaksiPengisian(Kendaraan dt, BBM bbm, double ltr){
         kendaraan = dt;
         this.bbm = bbm;
-        liter = ltr;
+        this.liter = ltr;
         totalBayar = ltr * this.bbm.hargaPerLiter;
     }
 

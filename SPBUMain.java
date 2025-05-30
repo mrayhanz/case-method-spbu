@@ -39,21 +39,36 @@ public class SPBUMain {
                     System.out.println(">> Jumlah kendaraan dalam antrian: " + jumlahAntrian);
                     break;
                 case 4:
-                        System.out.println("Petugas Melayani " + spbu.dataAntrian[spbu.frontAntrian].platNomor);
-                        System.out.print("Masukkan Jenis BBM: ");
-                        String jenisBBM = sc.nextLine();
-                        System.out.println("Masukkan Harga per Liter: ");
-                        double hargaPerLiter = sc.nextDouble();
-                        System.out.print("Masukkan Jumlah Liter: ");
-                        double liter = sc.nextDouble();
-                        BBM bbm = new BBM(jenisBBM, hargaPerLiter);
-                        spbu.melayani(bbm, liter);
-                        System.out.println(">> Transaksi Berhasil dicatat.");
+                        if (!spbu.isEmptyAntrian()) {
+                            System.out.println("Petugas Melayani " + spbu.dataAntrian[spbu.frontAntrian].platNomor);
+                            System.out.print("Masukkan Jenis BBM: ");
+                            String jenisBBM = sc.nextLine();
+                            double hargaPerLiter, liter;
+                            while (true) {
+                                System.out.println("Masukkan Harga per Liter: ");
+                                hargaPerLiter = sc.nextDouble();
+                                System.out.print("Masukkan Jumlah Liter: ");
+                                liter = sc.nextDouble();
+                                sc.nextLine();
+                                if (hargaPerLiter > 0 && liter > 0) {
+                                    break;
+                                }else{
+                                    System.out.println("Input invalid");
+                                }
+                            }
+                            BBM bbm = new BBM(jenisBBM, hargaPerLiter);
+                            spbu.melayani(bbm, liter);
+                            System.out.println(">> Transaksi Berhasil dicatat.");
+                        }else{
+                            System.out.println("Antrian masih kosong");
+                        }
                     break;
                 case 5:
                     System.out.println("--- Riwayat transaksi ---");
                     spbu.riwayatTransaksi();
                     break;
+                case 0:
+                        System.out.println("--- Terima Kasih :) ----");
                 default:
                     System.out.println("Pilihan tidak valid.");
                     break;
