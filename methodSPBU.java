@@ -24,13 +24,13 @@ public class methodSPBU {
     }
     public void tambahAntrian(kendaraan input){
         if (isFullAntrian()) {
-            System.out.println("Antrian penuh, tidak dapat menambah mahasiswa.");
+            System.out.println("Antrian penuh, tidak dapat menambah kendaraan.");
             return;
         }
         rearAntrian = (rearAntrian + 1) % max;
         dataAntrian[rearAntrian] = input;
         sizeAntrian ++;
-        System.out.println(input.platNomor + " berhasil masuk ke antrian.");
+        System.out.println( ">>" + input.platNomor + " berhasil masuk ke antrian.");
     }
     public void melayani(BBM bbm, double liter){
         TransaksiPengisian dtInput = new TransaksiPengisian(dataAntrian[frontAntrian], bbm, liter);
@@ -63,4 +63,10 @@ public class methodSPBU {
             System.out.println(temp.data.kendaraan.platNomor + " : Rp." + temp.data.totalBayar);
         }
     }
+
+    // public void input(){
+    //     System.out.print("Masukkan Plat Nomor : ");
+    //     System.out.print("Masukkan Jenis Kendaraan : ");
+    //     System.out.print("Masukkan Merk : ");
+    // }
 }
