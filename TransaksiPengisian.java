@@ -9,5 +9,4 @@ public class TransaksiPengisian {
         this.liter = ltr;
         totalBayar = ltr * this.bbm.hargaPerLiter;
     }
-
 }

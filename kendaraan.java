@@ -1,6 +1,6 @@
 public class Kendaraan {
     String platNomor, tipe, merk;
-
+    
     public Kendaraan(String platNomor, String tipe, String merk) {
         this.platNomor = platNomor;
         this.tipe = tipe;
